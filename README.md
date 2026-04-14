@@ -23,6 +23,10 @@ A browser-based typing tutorial game for children that teaches correct finger pl
 | 🔵 Blue | — | Index |
 | 🟣 Purple | — | Middle |
 
+## Play Online
+
+👉 **[https://neilddixon.github.io/typie/](https://neilddixon.github.io/typie/)**
+
 ## Getting Started
 
 Just open `index.html` in any modern browser — no server or install needed.
