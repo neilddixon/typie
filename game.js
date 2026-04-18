@@ -100,6 +100,23 @@ function showScreen(id) {
 }
 
 // ── Game flow ─────────────────────────────────────────────────────────────────
+function buildLevelSelect() {
+  const el = document.getElementById('level-select');
+  el.innerHTML = '<p>— or jump to a level —</p>' +
+    LEVELS.map((lv, i) =>
+      `<button class="btn-level" onclick="jumpToLevel(${i})">${i + 1}. ${lv.title}</button>`
+    ).join('');
+}
+
+function jumpToLevel(idx) {
+  buildKeyboard();
+  state.score = 0;
+  document.getElementById('score').textContent = 0;
+  loadLevel(idx);
+  showScreen('lesson');
+  document.getElementById('type-input').focus();
+}
+
 function startLesson() {
   buildKeyboard();
   loadLevel(0);
@@ -170,6 +187,7 @@ function highlightKey(char) {
 
 // ── Input handling ────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  buildLevelSelect();
   const input = document.getElementById('type-input');
 
   input.addEventListener('keydown', e => {
